@@ -25,6 +25,7 @@ apply plugin: 'kotlin-kapt'
 apply plugin: 'com.jakewharton.hugo'
 apply plugin: "com.jaredsburrows.spoon"
 apply plugin: 'com.novoda.android-command'
+apply plugin: 'jacoco'
 
 def quote(String input) {
     return "\"" + input + "\""
@@ -99,6 +100,7 @@ android {
         debug {
             applicationIdSuffix ".debug"
             manifestPlaceholders = [appName: "My Expenses Debug", debug: "true"]
+            testCoverageEnabled true
         }
         forTest {
             initWith debug
