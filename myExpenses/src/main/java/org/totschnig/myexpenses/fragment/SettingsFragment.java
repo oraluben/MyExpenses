@@ -276,6 +276,7 @@ public class SettingsFragment extends PreferenceFragmentCompat implements
 
     if (rootKey == null) { //ROOT screen
       findPreference(HOME_CURRENCY).setOnPreferenceChangeListener(this);
+      findPreference(HOME_CURRENCY).setEnabled(false);
 
       pref = findPreference(RESTORE);
       pref.setTitle(getString(R.string.pref_restore_title) + " (ZIP)");
@@ -355,6 +356,7 @@ public class SettingsFragment extends PreferenceFragmentCompat implements
 
       ListPreference languagePref = ((ListPreference) findPreference(UI_LANGUAGE));
       languagePref.setEntries(getLocaleArray(getContext()));
+      languagePref.setEnabled(false);
 
       findPreference(SYNC_NOTIFICATION).setOnPreferenceChangeListener(storeInDatabaseChangeListener);
       findPreference(SYNC_WIFI_ONLY).setOnPreferenceChangeListener(storeInDatabaseChangeListener);
