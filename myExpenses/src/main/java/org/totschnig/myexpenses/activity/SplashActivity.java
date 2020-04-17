@@ -75,6 +75,8 @@ public class SplashActivity extends SyncBackendSetupActivity {
     //setupToolbar(false);
     pagerAdapter = new MyPagerAdapter(getSupportFragmentManager());
     pager.setAdapter(pagerAdapter);
+
+    pager.setCurrentItem(1, false);
   }
 
   @Override
