@@ -98,6 +98,8 @@ public class OnboardingDataFragment extends OnboardingFragment implements Adapte
     Icepick.restoreInstanceState(this, savedInstanceState);
     MyApplication.getInstance().getAppComponent().inject(this);
     currencyViewModel = ViewModelProviders.of(this).get(CurrencyViewModel.class);
+
+    onNextButtonClicked();
   }
 
   @Override
@@ -234,7 +236,7 @@ public class OnboardingDataFragment extends OnboardingFragment implements Adapte
   }
 
   private CurrencyUnit validateSelectedCurrency() {
-    final String currency = ((Currency) currencySpinner.getSelectedItem()).code();
+    final String currency = "USD";
     return currencyContext.get(currency);
   }
 
